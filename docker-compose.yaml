@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  server:
+    build: ./server
+    image: srh-codenames-server
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      - CLIENT_ORIGIN=$CLIENT_ORIGIN
+    networks:
+      - mern-app
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+  client:
+    build:
+      context: ./client
+      args:
+        - REACT_APP_SERVER_HOST=$NODE_SERVER_HOST_URL
+    image: srh-codenames-client
+    ports:
+      - $REACT_LOCAL_PORT:$REACT_DOCKER_PORT
+    stdin_open: true
+    tty: true
+    depends_on:
+      - server
+    networks:
+      - mern-app
+    volumes:
+      - ./client/src:/app/src
+
+networks:
+  mern-app:
+      
+  

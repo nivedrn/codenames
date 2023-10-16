@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  server:
+    environment:
+      - CLIENT_ORIGIN=https://srh-codenames-client-onl56lugxq-od.a.run.app
+  client:
+    build:
+      context: ./client
+      args:
+        - REACT_APP_SERVER_HOST=https://srh-codenames-server-onl56lugxq-od.a.run.app

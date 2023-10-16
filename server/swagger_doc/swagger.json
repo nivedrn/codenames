@@ -1,0 +1,327 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "CODE NAMES",
+      "description": "List of all the APIs used in this project"
+    },
+    "schemes": ["http"],
+    "securityDefinitions": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+      "/users": {
+          "post": {
+              "tags":["Auth"],
+              "description": "",
+              "summary": "Registers/Updates a user",
+              "operationId": "registerUser",
+              "consumes": [
+                "application/json"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                  {
+                      "in": "body",
+                      "name": "body",
+                      "description": "User's basic information",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/RegisterUser"
+                      }
+                  }
+              ],
+              "responses": {
+                "201": {
+                  "description": "User Created"
+                },
+                "400": {
+                  "description": "User Already exists"
+                }
+              }
+          }
+      },
+      "/users/login": {
+        "post": {
+            "tags":["Auth"],
+            "description": "",
+            "summary": "User authentication",
+            "operationId": "userAuthentication",
+            "consumes": [
+              "application/json"
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "User's credential",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/LoginUser"
+                    }
+                }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK"
+              },
+              "404": {
+                "description": "Incorrect User or Password"
+              }
+            }
+        }
+      },
+      "/users/fetchUsers": {
+          "get": {
+              "security": [{ "Bearer": [] }],
+              "tags":["Auth"],
+              "description": "",
+              "summary": "Fetches Users based on search parameters",
+              "operationId": "fetchUsers",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                  {
+                      "name": "page",
+                      "in": "query",
+                      "description": "Page Number",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int64"
+                  },
+                  {
+                      "name": "search",
+                      "in": "query",
+                      "description": "Search based on user's Name",
+                      "required": false,
+                      "type": "string"
+                  },
+                  {
+                      "name": "limit",
+                      "in": "query",
+                      "description": "Number of users returned per response",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int64"
+                  }
+              ],
+              "responses": {
+                "404": {
+                  "description": "Users Not Found"
+                },
+                "200": {
+                  "description": "OK"
+                }
+              }
+          }
+      },
+      "/game/getWord": {
+        "get": {
+            "tags":["Game API"],
+            "description": "",
+            "summary": "Returns words",
+            "operationId": "fetchUsers",
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+                {
+                    "name": "wordpack",
+                    "in": "query",
+                    "description": "Wordpack level",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK"
+              },
+              "404": {
+                "description": "Words not available"
+              }
+            }
+        }
+      },
+      "/game/createWord": {
+        "post": {
+            "tags":["Game API"],
+            "description": "",
+            "summary": "Adds a new word to selected wordpack",
+            "operationId": "createWord",
+            "consumes": [
+              "application/json"
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "Add wordpack, word and isAcitve",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/CreateWord"
+                    }
+                }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK"
+              },
+              "400": {
+                "description": "Please Fill all the feilds"
+              }
+            }
+        }
+      },
+      "/game/createWordPack": {
+        "post": {
+            "tags":["Game API"],
+            "description": "",
+            "summary": "Creates a new wordpack",
+            "operationId": "createWordPack",
+            "consumes": [
+              "application/json"
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "Add wordpack, word and isAcitve",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/CreateWordPack"
+                    }
+                }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK"
+              },
+              "400": {
+                "description": "Please Fill all the feilds"
+              }
+            }
+        }
+      }
+    },
+    "definitions": {
+      "User": {
+          "type": "object",
+          "properties": {
+              "name": {
+                  "type": "integer",
+                  "format": "int64",
+                  "required": true
+              },
+              "email": {
+                  "type": "string",
+                  "required": true
+              },
+              "password": {
+                  "type": "string",
+                  "required": true
+              },
+              "role": {
+                  "type": "string",
+                  "enum": ["user", "admin"],
+                  "required": true
+              },
+              "pic": {
+                  "type": "string",
+                  "required": true
+              },
+              "isBlocked": {
+                  "type": "boolean"
+              },
+              "registeredAt": {
+                  "type": "date"
+              },
+              "isAdmin": {
+                  "type": "boolean",
+                  "required": true
+              }
+          }
+      },
+      "RegisterUser": {
+          "type": "object",
+          "properties": {
+              "name": {
+                  "type": "string",
+                  "required": true
+              },
+              "email": {
+                  "type": "string",
+                  "required": true
+              },
+              "password": {
+                  "type": "string",
+                  "required": true
+              }
+          }
+      },
+      "LoginUser": {
+        "type": "object",
+        "properties": {
+            "email": {
+                "type": "string",
+                "required": true
+            },
+            "password": {
+                "type": "string",
+                "required": true
+            }
+        }
+     },
+     "CreateWord": {
+        "type": "object",
+        "properties": {
+            "wordpack": {
+                "type": "string",
+                "required": true
+            },
+            "word": {
+                "type": "string",
+                "required": true
+            },
+            "isAtivate": {
+                "type": "string",
+                "required": true
+            }
+        }
+      },
+      "CreateWordPack": {
+         "type": "object",
+         "properties": {
+             "name": {
+                 "type": "string",
+                 "required": true
+             },
+             "description": {
+                 "type": "string",
+                 "required": true
+             },
+             "isAtivate": {
+                 "type": "string",
+                 "required": true
+             }
+         }
+       }
+    }
+}

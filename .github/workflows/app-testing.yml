@@ -1,0 +1,69 @@
+name: Run Unit Testing
+
+on:
+  pull_request:
+     branches: 
+       - '**' 
+
+  push:
+    branches: 
+      - '**' 
+
+  workflow_dispatch:
+
+  workflow_call:
+
+jobs:
+  backend-unit-tests:
+    name: 'Backend: Unit Tests'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'server' 
+
+    strategy:
+      matrix: 
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version}}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version}}
+          cache: 'npm'
+          cache-dependency-path: ./server/package-lock.json
+
+      - name: Install dependencies  
+        run: npm ci
+        
+      - name: Run Tests
+        run:  npm test  
+          
+
+  frontend-unit-tests:
+    name: 'Frontend: Unit Tests'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'client' 
+
+    strategy:
+      matrix: 
+        node-version: [18.x]
+
+    steps:      
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version}}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version}}
+          cache: 'npm'
+          cache-dependency-path: ./client/package-lock.json
+
+      - name: Install dependencies  
+        run: npm ci
+        
+      - name: Run Tests
+        run:  npm test  
+          

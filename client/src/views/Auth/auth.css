@@ -1,0 +1,177 @@
+.authContent {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: #F2F2FF;
+    background: rgba(242, 242, 255, 0.85);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-size: cover;
+    background-repeat: repeat-y;
+    max-width: 98vw;
+    border: 2px solid #938396;
+    border-radius: 10px;
+}
+
+.authPageMessage{
+    display: flex;
+    justify-content: center;
+    vertical-align: bottom;
+    padding: 2%;
+}
+
+.authForms{
+    display: flex;
+    flex-direction: row;
+    min-height: 500px;
+    justify-content: center;
+}
+
+.authGuest{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authGuestName {
+    border-radius: 5px;
+    border: 1px solid #0f0e0f;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 30%;
+    margin-right: 10px;
+    padding: 0 8px;
+    font-size: 24px;
+    font-family: nanumPenScript;
+    margin-right: 15px;
+}
+
+.guestActionButton {
+    border-radius: 10px;
+    border: 1px solid #c3b1ff;
+    box-shadow: 2px 7px #c3b1ff, -2px 7px #c3b1ff;
+    background-color: #e7e0fd;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+    height: 50px;
+    width: 30%;
+    font-size: 24px;
+    padding: 5px 20px;
+    margin-left: 15px;
+}
+
+.guestActionButton:hover {
+    box-shadow: none;
+}
+
+.guestActionButton:active {
+    transform: scale(0.9);
+}
+
+.authNextAction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextActioButton {
+    border-radius: 10px;
+    border: 1px solid #c3b1ff;
+    box-shadow: 2px 7px #c3b1ff, -2px 7px #c3b1ff;
+    background-color: #e7e0fd;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+    height: 50px;
+    width: 30%;
+    margin-top: 20px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextActioButton:hover {
+    box-shadow: none;
+}
+
+.nextActioButton:active {
+    transform: scale(0.9);
+}
+
+.authFormLogin{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    width: 20%;
+    min-width: 400px;
+    height: 100%;
+    border: 1px solid #1b1a65;
+    border-radius: 10px;
+    background: #e6effe;
+	box-shadow: -8px 8px #a5c8e8;
+    margin-right: 15px;
+}
+
+.authFormRegister{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    width: 20%;
+    min-width: 400px;
+    height: 100%;
+    border: 1px solid #7f214e;
+    border-radius: 10px;
+    background: #fff9f1;
+	box-shadow: 8px 8px #e7bac0;
+    margin-left: 15px;
+}
+
+.authFormLogin input, .authFormRegister input {
+    font-size: 20px;
+    width: 90%;
+    height: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.authFormLogin input::placeholder, .authFormRegister input::placeholder {
+    font-size: 20px;
+}
+
+.authFormLogin input[type=submit], .authFormRegister input[type=submit] {
+    margin-top: 30px;
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.authFormLogin input[type=submit]{
+    background-color: #a5c8e8;
+}
+
+.authFormRegister input[type=submit] {
+    background-color: #e7bac0;
+}
+
+.authFormLogin input[type=submit]:hover, .authFormRegister input[type=submit]:hover, .google-logo img:hover {
+    transform: translateY(5px);
+	transition: 0.2s;
+}
+
+.or-class, .sign-in-with-class {
+    font-size: 20px;
+}
+
+.google-logo img {
+    height: 60px;
+    width: 60px;
+}
+
+h4{
+    padding: 25px 0;
+}

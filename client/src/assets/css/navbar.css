@@ -1,0 +1,82 @@
+
+@font-face {
+    font-family: LUNCH;
+    src: url("../font/LUNCH___.TTF");
+  }
+  
+.userActionButton {
+    border: 2px solid #938396;
+    border-radius: 5px;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+    background-color: #ffffff;
+    padding: 5px 20px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.userActionButton:hover {
+    box-shadow: none;
+}
+
+.userActionButton:active {
+    transform: scale(0.9);
+}
+
+.userActionButtonShadowRight {
+    box-shadow: 2px 3px #938396;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.navBarUserSection{    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #1b1a65;
+}
+
+.navBarLogoSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #1b1a65;
+}
+
+.navBarLogoSection:hover {
+    transform: translateY(5px);
+    transition: 0.2s;
+  }
+
+.nav-brand-logo-class:hover {
+  transform: translateY(5px);
+  transition: 0.2s;
+}
+
+.company-logo > a {
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.company-logo > a {
+  font-family: LUNCH;
+  color: #938396;
+}
+
+.navBarLogoSection:hover {    
+    transform: scale(1.05);
+}
+
+.nav-brand-logo-class {
+  width: 160px;
+  height: 30px;
+}
+
+.home-page-logo-container {
+  font-family: LUNCH;
+  font-size: 195px;
+  margin-top: -200px;
+  color: #1b1a65;
+  margin:20px;
+  text-shadow: 5px 5px #7f214e;
+}

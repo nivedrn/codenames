@@ -1,0 +1,558 @@
+.roomContent {
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    justify-content: center;
+    background-color: #F2F2FF;
+    background: rgba(242, 242, 255, 0.85);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-size: cover;
+    background-repeat: repeat-y;
+    max-width: 98vw;
+    border: 2px solid #938396;
+    border-radius: 10px;
+}
+
+.displayFlex{
+    display:flex;
+}
+
+.blueTeam,
+.redTeam {
+    display: grid;
+    grid-template-rows: 10% 15% 15% 15% 15% 15% 15%;
+    max-width: 300px;
+    width: 15vw;
+    max-height: 50vh;
+    border-radius: 10px;
+    background-color: #ffffff;
+    flex-direction: column;
+}
+
+.blueTeam {
+    border: 1px solid #1b1a65;
+    box-shadow: -8px 10px #a5c8e8;
+    background-color: #e6effe;
+}
+
+.redTeam {
+    border: 1px solid #7f214e;
+    box-shadow: 8px 10px #e7bac0;
+    background-color: #fff9f1;
+}
+
+.blueTeamHeader,
+.redTeamHeader {
+    background-color: #ffffff;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: nanumPenScript;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.blueTeamHeader {
+    box-shadow: 0 7px #1b1a65;
+}
+
+.redTeamHeader {
+    box-shadow: 0 7px #7f214e;
+}
+
+.blueTeamFooter,
+.redTeamFooter {
+    grid-row-start: 7;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.justifySpaceBetween {
+    justify-content: space-between !important;
+}
+
+.blueTeamScore,
+.redTeamScore {
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    font-family: nanumPenScript;
+    font-size: 24px;
+    cursor: pointer;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.blueTeamScore {
+    background-color: #1b1a65 !important;
+}
+
+.redTeamScore {
+    background-color: #7f214e !important;
+}
+
+.initialMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    height: 100%;
+    font-family: nanumPenScript;
+    font-size: 28px;
+    margin: 0 50px;
+}
+
+.roomLobbyTitle {
+    font-size: 40px;
+}
+
+.initialMessageContent {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    border: 1px solid #938396;
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-align: left;
+    margin-top: 40px;
+    font-size: 24px;
+    width: 100%;
+}
+
+.initialMessageContent>span {
+    padding: 0 15px;
+    margin: 15px 0;
+}
+
+.playerNameInput {
+    text-align: center;
+}
+
+.gameRoomLink {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gameRoomLink {
+    cursor: pointer;
+    color: #938396;
+    text-decoration: underline;
+}
+
+.wordPackList {
+    display: flex;
+    flex-direction: column;
+}
+
+.wordPack {
+    border: 1px solid #938396;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+.gameSettingList {
+    display: flex;
+    flex-direction: column;
+}
+
+.gameSetting {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+
+.gameSettingCheckbox {
+    margin-right: 20px;
+}
+
+.startGameButton {
+    border-radius: 10px;
+    border: 1px solid #c3b1ff;
+    box-shadow: 2px 7px #c3b1ff, -2px 7px #c3b1ff;
+    background-color: #e7e0fd;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+    height: 50px;
+    width: 30%;
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.startGameButton:hover {
+    box-shadow: none;
+}
+
+.startGameButton:active {
+    transform: scale(0.9);
+}
+
+.gameContent {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 2vw 10px 2vw;
+    padding: 0 1vw;
+    width: 60vw;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.blueBoard {
+    border: 1px solid #1b1a65;
+    box-shadow: -8px 10px #a5c8e8;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.redBoard {
+    border: 1px solid #7f214e;
+    box-shadow: 8px 10px #e7bac0;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    height: 100%;
+    position: relative;
+}
+
+.gameBoardMessage {
+    font-size: 52px;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.gameBoardSecondaryMessage{
+    font-size: 32px;
+    margin-bottom: 80px;
+    font-weight: 200;
+}
+
+.gameBoardButton {
+    border: 2px solid #0f0e0f;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 50px;
+    height: 50px;
+    font-family: nanumPenScript;
+    font-size: 24px;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+    cursor: pointer;
+}
+
+.gameBoardButton:hover {
+    box-shadow: none;
+}
+
+.gameBoardOverlay {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    height: 100%;
+    background: rgba(231, 224, 253, 0.8);
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    pointer-events: all;
+}
+
+.gameStatus {
+    display: flex;
+    justify-content: space-between;
+    font-family: nanumPenScript;
+    font-size: 24px;
+    padding: 10px 30px;
+}
+
+.gameStatusTime,
+.gameStatusTeam {
+    min-width: 140px;
+}
+
+.gameStatusTeamName,
+.gameStatusTimer {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.blueTeamText {
+    color: #1b1a65;
+}
+
+.redTeamText {
+    color: #7f214e;
+}
+
+.gameActions {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+
+.gameActionButton {
+    border-radius: 10px;
+    height: 50px;
+    width: 120px;
+    font-family: nanumPenScript;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.gameActionButton:hover {
+    box-shadow: none;
+}
+
+.gameActionButton:active {
+    transform: scale(0.9);
+}
+
+.newBoardButton {
+    background-color: #ffffff;
+    border: 1px solid #0f0e0f;
+}
+
+.buttonBoxShadowLeft {
+    box-shadow: -4px 5px #938396;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.buttonBoxShadowRight {
+    box-shadow: 4px 5px #938396;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.blueTeamButton {
+    background-color: #ffffff;
+    border: 1px solid #1b1a65;
+    box-shadow: -4px 5px #a5c8e8;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.redTeamButton {
+    background-color: #ffffff;
+    border: 1px solid #7f214e;
+    box-shadow: 4px 5px #e7bac0;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.joinBlueTeamButton {
+    align-self: flex-end;
+    height: 40px;
+}
+
+.joinRedTeamButton {
+    align-self: flex-start;
+    height: 40px;
+}
+
+.gameClueDiv {
+    border-radius: 5px;
+    display: flex;
+    height: 50px;
+    padding: 2px 6px;
+    align-items: center;
+}
+
+.gameClueDisplay{
+    font-size: 34px;
+    font-family: nanumPenScript;
+}
+
+.gameClueText {
+    border-radius: 5px;
+    border: 1px solid #0f0e0f;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    margin-right: 10px;
+    padding: 0 8px;
+    font-size: 24px;
+    font-family: nanumPenScript;
+}
+
+.gameClueNumber {
+    border-radius: 5px;
+    border: 1px solid #0f0e0f;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    margin-right: 10px;
+    width: 60px;
+    padding: 0 8px;
+    font-size: 24px;
+    font-family: nanumPenScript;
+}
+
+.gameClueSubmitButton {
+    height: 40px;
+    margin: 0;
+}
+
+.wordCard {
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 50% 20% 5% 25%;
+    grid-template-columns: 100%;
+    padding: 10px;
+    border: 2px solid #938396;
+}
+
+.wordCardInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.wordCardVotes {
+    margin: 0% 20%;
+    border: 1px solid #e2cf78;
+    background-color: #FAF2D2;
+    border-radius: 5px;
+}
+
+.wordCardActions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    border: 1px solid #938396;
+    border-radius: 0 0 5px 5px;
+    visibility: hidden;
+}
+
+.wordCardSuggest {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wordCardSelect {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wordCard:hover>.wordCardActions {
+    visibility: visible;
+}
+
+.wordCardNEUTRAL {
+    border: 2px solid #c3b1ff !important;
+    box-shadow: inset 10px 10px #e7e0fd, inset -10px -10px #e7e0fd;
+}
+
+.wordCardRED {
+    border: 2px solid #7f214e;
+    box-shadow: inset 10px 10px #e7bac0, inset -10px -10px #e7bac0;
+}
+
+.wordCardBLUE {
+    border: 2px solid #1b1a65 !important;
+    box-shadow: inset 10px 10px #a5c8e8, inset -10px -10px #a5c8e8;
+}
+
+.wordCardBLACK {
+    border: 2px solid #938396 !important;
+    box-shadow: inset 10px 10px #605663, inset -10px -10px #605663;
+}
+
+.wordCardBlueTurn:hover {
+    box-shadow: -6px 6px #c3b1ff;
+    transition: box-shadow 100ms ease, transform 200ms ease;
+}
+
+.wordCardRedTurn:hover {
+    box-shadow: 6px 6px #c3b1ff;
+    transition: box-shadow 100ms ease, transform 200ms ease;
+}
+
+.playerCard {
+    display: flex;
+    background-color: #ffffff;
+    width: 93%;
+    height: 90%;
+    border-radius: 5px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.blueTeamPlayer {
+    margin: 5px 2% 0px 5%;
+    border: 1px solid #1b1a65;
+    box-shadow: -4px 5px #a5c8e8;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.redTeamPlayer {
+    margin: 5px 5% 0px 2%;
+    border: 1px solid #7f214e;
+    box-shadow: 4px 5px #e7bac0;
+    transition: box-shadow 300ms ease, transform 500ms ease;
+}
+
+.playerAvatar {
+    text-align: left;
+    height: 100%;
+    display: flex;
+}
+
+.playerAvatarElement{
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.playerName {
+    text-align: left;
+    font-size: 24px;
+    padding-left:5px;
+}
+
+.playerRoleDiv {
+    background-color: #e7e0fd;
+    padding: 2px 5px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.playerRole {
+    padding: 0px 20px;
+    min-width: 94px;
+    cursor: pointer;
+}
+
+.activeRole {
+    border: 2px solid #938396;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.deactivatedDiv {
+    pointer-events: none;
+}
+
+/* On screens that are 1400px wide or less, go from four columns to two columns */
+@media screen and (max-width: 1400px) {
+
+    .wordCardInner,
+    .gameStatus,
+    .gameStatusTeamName,
+    .gameStatusTimer {
+        font-size: 20px;
+    }
+}

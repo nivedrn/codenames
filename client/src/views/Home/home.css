@@ -1,0 +1,95 @@
+@font-face {
+  font-family: nanumPenScript;
+  src: url("/src/assets/font/NanumPenScript-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: nanumPenScript;
+}
+
+header {
+  height: 56px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding:0 50px;
+}
+
+main {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-room-btn, .join-room-btn {
+  width: 250px;
+  height: 60px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin: 30px 30px 0px 0px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+button.create-room-btn {
+  background: #e6effe;
+  border: 1px solid #1b1a65;
+  box-shadow: 4px 4px #a5c8e8;
+}
+
+button.join-room-btn {
+  background: #fff9f1;
+  border: 1px solid #7f214e;
+  box-shadow: 4px 4px #e7bac0;
+}
+
+button:hover {
+  transform: translateY(5px);
+  transition: 0.2s;
+}
+
+input.room_code {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  padding-bottom: 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.room_code::placeholder {
+  color: black;
+  text-align: center;
+}
+
+.actions-class {
+  margin-top: 25px;
+}
+
+.how-to-play {
+  margin-top: 10vh;
+}
+
+.rules-container {
+  align-self: center;
+  padding: 16px 16px;
+  background-color: white;
+  border: 2px solid grey;
+  border-radius: 8px;
+  margin: 0 16px;
+  font-size: 19px;
+}
+
+.homePageMessage{
+    padding: 25px;
+    font-size: 28px;
+}

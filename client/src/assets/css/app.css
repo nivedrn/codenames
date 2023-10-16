@@ -1,0 +1,50 @@
+@font-face {
+    font-family: nanumPenScript;
+    src: url("../font/NanumPenScript-Regular.ttf");
+  }
+  
+  .App {
+    font-family: nanumPenScript;
+    text-align: center;
+    height: 100vh;
+    background-image: url("../images/codenames-bg-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primary-nav {
+    background-color: aliceblue;
+    padding: 16px 32px;
+  }
+  
+  nav a {
+    margin: 0 2rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .element {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+  }
+  
+  .navStyle{
+      display:flex;
+      height:56px;
+      padding: 0px 20px;
+      background-color: #F2F2FF;
+  }
+  
+  body{    
+    margin: 0px !important;
+  }
+  

@@ -1,0 +1,185 @@
+.profileContent {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: #F2F2FF;
+    background: rgba(242, 242, 255, 0.85);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-size: cover;
+    background-repeat: repeat-y;
+    max-width: 98vw;
+    border: 2px solid #938396;
+    border-radius: 10px;
+}
+
+.sidebarContent {
+    display: grid;
+    grid-template-rows: 10% 10% 60% 10%;
+    max-width: 300px;
+    min-width: 200px;
+    width: 15vw;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.sidebarLogoutButton {
+    grid-row-start: 5;
+}
+
+.sidebarContent {
+    font-size: 35px;
+    line-height: 80px;
+}
+
+.sidebarContent span {
+    list-style-type: none;
+}
+
+.sidebarContent a {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.sidebarContent a:hover {
+    background-color: #88a6da;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.outletContent {
+    display: flex;
+    border-radius: 10px;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.profile-page-container .navigation-bar ul span {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-page-container .navigation-bar ul span:hover {
+    background-color: #88a6da;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.players_table, .profileSettingsTab {
+    background-color: white;
+    border-radius: 10px;
+    overflow-y: auto;
+    width: 98%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.players_table_data th {
+    text-decoration: underline;
+}
+
+.players_table_data td, .players_table_data th {
+    width: 10%;
+    font-size: 25px;
+}
+
+.authGuestSearchInput {
+    border-radius: 5px;
+    border: 2px solid #0f0e0f;
+    display: flex;
+    align-self: center;
+    height: 45px;
+    width: 98%;
+    padding: 0 8px;
+    font-size: 24px;
+    font-family: nanumPenScript;
+}
+
+.profileSettingsInputFields{
+    border-radius: 5px;
+    border: 1px solid #0f0e0f;
+    display: flex;
+    align-self: center;
+    min-height: 45px;
+    width: 98%;
+    padding: 0 8px;
+    font-size: 24px;
+    font-family: nanumPenScript;
+}
+
+.playerSettingsForm{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerSettingsFormInputs{
+    display: grid;
+    grid-template-rows: 35% 35% 35%;
+    grid-template-columns: 20% 70%;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.playerSettingsFormInputs > span {
+    margin-top:10px;
+}
+
+.playerSettingsForm > span {
+    width: 80%;
+    margin: 10px 0;
+    justify-content: center;
+}
+
+.playerAvatarSettings {
+    text-align: left;
+    width: 150px;
+    height: 150px;
+    display: flex;
+}
+
+.playerAvatarSettingsElement{
+    width: 150px;
+    height: 150px;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.playerTableActions{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+}
+
+
+.settingsActionButton {
+    border-radius: 10px;
+    height: 50px;
+    min-width: 220px;
+    font-family: nanumPenScript;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* On screens that are 900px wide or less, go from four columns to two columns */
+@media screen and (max-width: 900px) {
+
+    .playerSettingsFormInputs {
+        display: grid;
+        grid-template-rows: 15% 15% 15% 15% 15% 15%;
+        grid-template-columns: 100%;
+    }
+}

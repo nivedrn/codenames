@@ -1,0 +1,15 @@
+
+footer {
+    padding-bottom: 3px;
+}
+
+footer a {
+  font-size: 18px;
+  padding-right: 7px;
+  padding-left: 7px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
