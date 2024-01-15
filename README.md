@@ -6,7 +6,7 @@
 <center>
 <img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"/>
 <img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg"/>
-<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" style="color: #ffffff;"/>
 <img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"/>
 <img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg"/>
 <img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
@@ -16,20 +16,20 @@
 </center>
 <br/>
 
-#####Overview
+#### Overview
 - The frontend is developed using the React Framework. While hosting, the frontend is served using Nginx as per the config file located at `/client/nginx/nginx.conf`.
 - The backend server is created using Node.js and Express. 
 - User data and list of words to be used in the game is stored as a MongoDB collection.
 - Data related to a specific instance of a game is stored on the backend. For each instance of a game a websocket connection is established using the Socket.io library. A room is created for each game session and users then connect to a game using a unique room id generated. The url for a game is dynamically generated based on the room id. 
 
-#####Testing & Deployment
+##### Testing & Deployment
 Two worflows have been created using GitHub actions, one for testing and the other for deployment.
 - Testing Worflow: This worflow runs the client side and server side test scripts written in Jest.
 - Deployment Worflow: If the tests run have passed, client side and server side docker images are generated and pushed into dockerhub and Google Container Registry. The image is then deployed to Google Cloud services. (Currently disabled)
 
 Alternatively, Docker Compose files included in the repo can be run separately to generate images that can be run on localhost.
 
-#####Screenshots
+##### Screenshots
 <img align="center" width="40%" style="padding-right:3px;" src="images/homePage.png"/>
 <img align="center" width="40%" style="padding-right:3px;" src="images/userAuthPage.png"/>
 <img align="center" width="40%" style="padding-right:3px;padding-top:5px;" src="images/gameModePage.png"/>
