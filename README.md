@@ -1,40 +1,43 @@
-# sad-01-2023-project-team-4-1
+![Title!](images/titleImage.png)
 
-Demo Link: https://srh-codenames-client-onl56lugxq-od.a.run.app/
+<p align="justify">A browser based game inspired from the Codenames board game using websockets and MERN stack. This is a word-based party game where two teams compete to uncover their words on a grid of word cards. Teammates receive one-word clues from their spymaster to guess the right cards, avoiding opponent's agents and the assassin. The first team to identify all their agents or find the opponent's assassin wins.
+</p>
+<br/>
+<center>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg"/>
+<img align="center" width="35px" style="padding-right:20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"/>
 
-Docker Hub: https://hub.docker.com/repository/docker/nivedsrh/srh-codenames/general
+</center>
+<br/>
 
-Credentials to login 
+#####Overview
+- The frontend is developed using the React Framework. While hosting, the frontend is served using Nginx as per the config file located at `/client/nginx/nginx.conf`.
+- The backend server is created using Node.js and Express. 
+- User data and list of words to be used in the game is stored as a MongoDB collection.
+- Data related to a specific instance of a game is stored on the backend. For each instance of a game a websocket connection is established using the Socket.io library. A room is created for each game session and users then connect to a game using a unique room id generated. The url for a game is dynamically generated based on the room id. 
 
-User :- email: nived1@gmail.com
-        password: nived1
-        
-Admin:- email: admin2@gmail.com
-        password: admin2
+#####Testing & Deployment
+Two worflows have been created using GitHub actions, one for testing and the other for deployment.
+- Testing Worflow: This worflow runs the client side and server side test scripts written in Jest.
+- Deployment Worflow: If the tests run have passed, client side and server side docker images are generated and pushed into dockerhub and Google Container Registry. The image is then deployed to Google Cloud services. (Currently disabled)
 
-Flow
-1.The user views the React web app with a browser.
-2.With both components written in Node.js, the React front end communicates with the Express back end via RESTful APIs.
-3.The back-end Express application uses the Mongo database for storing and retrieving data.
-4.Back-end results are communicated back to the the front end.
-Front-end results are rendered in a human readable format to the user.
+Alternatively, Docker Compose files included in the repo can be run separately to generate images that can be run on localhost.
 
-Tech Stack:
-MongoDB: Fully featured NoSQL server that is horizontally scalable to meet your enterprise class database service needs.
+#####Screenshots
+<img align="center" width="40%" style="padding-right:3px;" src="images/homePage.png"/>
+<img align="center" width="40%" style="padding-right:3px;" src="images/userAuthPage.png"/>
+<img align="center" width="40%" style="padding-right:3px;padding-top:5px;" src="images/gameModePage.png"/>
+<img align="center" width="40%" style="padding-right:3px;padding-right:2px;padding-top:5px;" src="images/userProfilePage.png"/>
+<img align="center" width="81%" style="padding-right:2px;padding-right:2px;padding-top:5px;" src="images/gameScreen1.png"/>
+<img align="center" width="81%" style="padding-right:2px;padding-right:2px;padding-top:5px;" src="images/gameScreen2.png"/>
 
-Node.js: An open-source JavaScript run-time environment for executing server-side JavaScript code.
 
-Express: Most popular and minimalistic web framework for creating API and Web server.
 
-React: JavaScript library for building user interfaces.
 
-MEMBERS:
 
-- Krishna
-- Nived Rajith Kumar Nambiar
-- Rajshri Ghorpade
-- Sawhil
-
-Krishna-Notes
-since Enabling the IPV6 that MongoDB has disabled by default
-so use family: 4 // Use IPv4, skip trying IPv6
